@@ -1,0 +1,29 @@
+
+    This is Simple Distributed Computing Pixel Shader mechanisms based on Java.
+
+    Parts of this software include:
+
+    - API (as of documentation)
+    - API (as of software interfaces for external apps)
+    - Distribution Server source
+    - Computing Node source
+
+    Documentation - aka. JavaDoc - can be found in /doc folder.
+    License (MIT License) can be accessed by /LICENSE file.
+
+
+    To bind this software with Your application, You need to provide Pixel Shader class, based on HPCPixelShader
+    interface (provide implementation), load Your image into Java Object based on HPCBitmapModel and provide needed
+    informations and then bind into server with Naming.lookup, like this:
+
+
+    HPCBridge bridge = (HPCBridge) Naming.lookup("rmi://<server ip>:9090/hpcRmiNodeServer");
+
+
+    Now You can use applyShaders method to apply Your new shader on Your image:
+
+
+    HPCBitmap finalVersion = bridge.applyShaders(sourceImage, shadersArrayList);
+
+
+
